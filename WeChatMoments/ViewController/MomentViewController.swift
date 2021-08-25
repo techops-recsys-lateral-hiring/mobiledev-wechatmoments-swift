@@ -14,7 +14,7 @@ class MomentViewController: UITableViewController {
 
     fileprivate var dataSource: TweetsDataSource!
     fileprivate var delegate: TweetTableViewDelegate!
-    fileprivate var user: [String: Any]?
+    fileprivate var user: User?
 
     private let userService = UserService()
     private let tweetService = TweetService()
@@ -180,21 +180,21 @@ private extension MomentViewController {
         return indicator
     }
 
-    func setupHeader(user: [String: Any]) {
-        if let url = user["profile-image"] as? String {
+    func setupHeader(user: User) {
+        if let url = user.profile {
             ImageHelper.default.getImage(url, forSize: nil) { image in
                 self.profileImageView.image = image
             }
         }
 
-        if let url = user["avatar"] as? String {
+        if let url = user.avatar {
             print(url)
             let avatar = ImageHelper.default.getImage(url, forSize: nil)
 
             self.avatarImageView.image = avatar
         }
 
-        if let nickName = user["nick"] as? String {
+        if let nickName = user.nick {
             self.nickNameLable.text = nickName
         }
     }
