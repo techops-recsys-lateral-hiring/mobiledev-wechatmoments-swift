@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0FBD94D01A0429779AB91705 /* Pods_WeChatMomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC1DD2B80E436C4E51EB329 /* Pods_WeChatMomentsTests.framework */; };
 		110586A226D6B8ED008BB4B3 /* Tweets.json in Resources */ = {isa = PBXBuildFile; fileRef = 110586A126D6B8ED008BB4B3 /* Tweets.json */; };
+		110586AB26D6BAFE008BB4B3 /* MyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110586AA26D6BAFE008BB4B3 /* MyModels.swift */; };
 		6B7060AE25E10B0800ABD1C7 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7060AD25E10B0800ABD1C7 /* HttpService.swift */; };
 		6B70610625E1109F00ABD1C7 /* UrlConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70610525E1109F00ABD1C7 /* UrlConstant.swift */; };
 		6B70612225E1168F00ABD1C7 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70612125E1168F00ABD1C7 /* UserService.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		110586A126D6B8ED008BB4B3 /* Tweets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tweets.json; sourceTree = "<group>"; };
+		110586AA26D6BAFE008BB4B3 /* MyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModels.swift; sourceTree = "<group>"; };
 		16137A897A5D833F9E89F196 /* Pods-WeChatMoments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMoments.debug.xcconfig"; path = "Target Support Files/Pods-WeChatMoments/Pods-WeChatMoments.debug.xcconfig"; sourceTree = "<group>"; };
 		4AC1DD2B80E436C4E51EB329 /* Pods_WeChatMomentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeChatMomentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5465914D16D0DAB9C3B32AD3 /* Pods-WeChatMoments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMoments.release.xcconfig"; path = "Target Support Files/Pods-WeChatMoments/Pods-WeChatMoments.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 				110586A126D6B8ED008BB4B3 /* Tweets.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		110586A926D6BA90008BB4B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				110586AA26D6BAFE008BB4B3 /* MyModels.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6B70609E25E0C6FE00ABD1C7 /* Delegate */ = {
@@ -211,6 +221,7 @@
 		6BB4205E25E08F2900FDEFAB /* WeChatMoments */ = {
 			isa = PBXGroup;
 			children = (
+				110586A926D6BA90008BB4B3 /* Model */,
 				6BFBA31225E25AB000C17D16 /* Utils */,
 				6B70610425E1109400ABD1C7 /* Config */,
 				6B70609F25E0C70B00ABD1C7 /* Component */,
@@ -524,6 +535,7 @@
 				6BFBA30925E257BA00C17D16 /* UIColor.swift in Sources */,
 				6B7060AE25E10B0800ABD1C7 /* HttpService.swift in Sources */,
 				6B70612225E1168F00ABD1C7 /* UserService.swift in Sources */,
+				110586AB26D6BAFE008BB4B3 /* MyModels.swift in Sources */,
 				6BFBA30425E2507800C17D16 /* CommentCell.swift in Sources */,
 				6BFBA30E25E25A1900C17D16 /* UIImage.swift in Sources */,
 				6B70610625E1109F00ABD1C7 /* UrlConstant.swift in Sources */,
