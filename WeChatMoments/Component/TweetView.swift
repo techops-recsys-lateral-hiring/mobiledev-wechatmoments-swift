@@ -1,9 +1,3 @@
-//
-//  TweetView.swift
-//  WeChatMoments
-//
-
-
 import SnapKit
 import UIKit
 
@@ -15,19 +9,19 @@ class TweetView: UITableViewHeaderFooterView {
     private var lineView: UIView!
     private let imageViewTagOffset = 80
 
-    var tweet: [String: Any]! {
+    var tweet: Tweet! {
         didSet {
-            let sender = tweet["sender"] as? [String: Any]
-            let nick = sender?["nick"] as? String
-            let username = sender?["username"] as? String
+            let sender = tweet.sender
+            let nick = sender?.nick
+            let username = sender?.username
             let name = nick ?? username
 
             self.btnSender.setTitle(name, for: .normal)
 
-            self.setSenderAvatar(sender?["avatar"])
-            self.setContent(tweet["content"] as? String)
-            
-            let images = tweet["images"] as? [[String: String]]
+            self.setSenderAvatar(sender?.avatar)
+            self.setContent(tweet.content)
+
+            let images = tweet.images
             let imgUrls = images?.map ({ $0["url"] ?? "" })
             self.addImageViews(imgUrls)
         }
@@ -173,7 +167,7 @@ class TweetView: UITableViewHeaderFooterView {
     private func addContraintsForImage(imageView: UIImageView, leadingConstant: CGFloat, topConstant: CGFloat, size: CGSize = Constants.IMAGE_SIZE) {
         imageView.snp.makeConstraints { make in
             make.left.equalTo(btnSender).offset(leadingConstant)
-            if let _ = tweet["content"] as? String {
+            if let _ = tweet.content {
                 make.top.equalTo(lblContent.snp_bottom).offset(topConstant)
             } else {
                 make.top.equalTo(btnSender.snp_bottom).offset(topConstant)

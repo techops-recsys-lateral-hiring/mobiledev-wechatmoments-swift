@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  WeChatMoments
-//
-
-
 import MBProgressHUD
 import PromiseKit
 import SnapKit
@@ -25,7 +19,7 @@ class MomentViewController: UITableViewController {
     private let userService = UserService()
     private let tweetService = TweetService()
 
-    fileprivate var tweets: [[String: Any]]? {
+    fileprivate var tweets: [Tweet]? {
         didSet {
             self.dataSource.tweets = self.tweets
             self.delegate.tweets = self.tweets

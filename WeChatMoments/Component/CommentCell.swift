@@ -1,22 +1,16 @@
-//
-//  CommentCell.swift
-//  WeChatMoments
-//
-
-
 import UIKit
 
 class CommentCell: UITableViewCell {
-    var comment: [String: Any]! {
+    var comment: Comment! {
         didSet {
-            let sender = self.comment["sender"] as? [String: Any]
-            var displayName = sender?["username"] as? String
-            if let nick = sender?["nick"] as? String {
+            let sender = self.comment.sender
+            var displayName = sender?.username
+            if let nick = sender?.nick {
                 displayName = nick
             }
 
             self.btnCommentSender.setTitle(displayName, for: .normal)
-            self.lblComment.text = ":\(self.comment["content"] as? String ?? "")"
+            self.lblComment.text = ":\(self.comment.content ?? "")"
         }
     }
 
@@ -60,7 +54,7 @@ class CommentCell: UITableViewCell {
     }
 
     private func getComment(senderName: String, comment: String) -> NSAttributedString {
-        let msg = "\(senderName):\(self.comment["content"] as? String ?? "")"
+        let msg = "\(senderName):\(self.comment.content ?? "")"
         let range = (msg as NSString).range(of: senderName)
         let attrString = NSMutableAttributedString(string: msg)
         attrString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.blue], range: range)
