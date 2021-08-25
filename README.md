@@ -28,6 +28,7 @@ We have some requirements during building this app, and you should also try to f
 #### Tech requirements:
 
 - The data JSON will be hosted at localhost:2727
+- An example of the response in `WeChatMomentsTests/Resources/Tweet.json` 
 - Layout using storyboards or programmatically
 - AutoLayout & Size Classes is appreciated.
 - Unit tests are appreciated.

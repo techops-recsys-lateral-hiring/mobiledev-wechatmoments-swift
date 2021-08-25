@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FBD94D01A0429779AB91705 /* Pods_WeChatMomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC1DD2B80E436C4E51EB329 /* Pods_WeChatMomentsTests.framework */; };
+		110586A226D6B8ED008BB4B3 /* Tweets.json in Resources */ = {isa = PBXBuildFile; fileRef = 110586A126D6B8ED008BB4B3 /* Tweets.json */; };
 		6B7060AE25E10B0800ABD1C7 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7060AD25E10B0800ABD1C7 /* HttpService.swift */; };
 		6B70610625E1109F00ABD1C7 /* UrlConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70610525E1109F00ABD1C7 /* UrlConstant.swift */; };
 		6B70612225E1168F00ABD1C7 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70612125E1168F00ABD1C7 /* UserService.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		110586A126D6B8ED008BB4B3 /* Tweets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tweets.json; sourceTree = "<group>"; };
 		16137A897A5D833F9E89F196 /* Pods-WeChatMoments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMoments.debug.xcconfig"; path = "Target Support Files/Pods-WeChatMoments/Pods-WeChatMoments.debug.xcconfig"; sourceTree = "<group>"; };
 		4AC1DD2B80E436C4E51EB329 /* Pods_WeChatMomentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeChatMomentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5465914D16D0DAB9C3B32AD3 /* Pods-WeChatMoments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChatMoments.release.xcconfig"; path = "Target Support Files/Pods-WeChatMoments/Pods-WeChatMoments.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		110586A026D6B8C0008BB4B3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				110586A126D6B8ED008BB4B3 /* Tweets.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		6B70609E25E0C6FE00ABD1C7 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +229,7 @@
 		6BB4207525E08F2A00FDEFAB /* WeChatMomentsTests */ = {
 			isa = PBXGroup;
 			children = (
+				110586A026D6B8C0008BB4B3 /* Resources */,
 				6BFBA29625E2098000C17D16 /* Service */,
 				6BFBA24825E1FF5C00C17D16 /* Mock */,
 				6BFBA23C25E1FEF500C17D16 /* Config */,
@@ -407,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110586A226D6B8ED008BB4B3 /* Tweets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
