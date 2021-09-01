@@ -10,9 +10,10 @@ struct User: Decodable {
     let profile: String?
 }
 
+struct Img: Decodable {
+    let url: String
+}
+
 struct Tweet: Decodable {
-    let sender: User?
-    let images: [[String: String]]?
-    let comments:[Comment]?
     let content: String?
 }
