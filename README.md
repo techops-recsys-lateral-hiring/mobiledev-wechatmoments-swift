@@ -12,18 +12,19 @@ The code is an iPhone app which looks like Wechat Moments page.
 
 We have some requirements during building this app, and you should also try to follow these requirements:
 
-#### Product Requirements
+#### Project overview
 
-- The assignment is to build an iPhone app which looks like Wechat Moments page.
-- Wechat Moments is the ideal goal of the view layouts
-- The view consists of profile image, avatar and tweets list
+<img src="https://user-images.githubusercontent.com/61306682/131655545-cfa011b4-637f-45db-bb26-3bb9c986b94b.png" alt="wechat_moments_2" height=400 /> <img src="https://user-images.githubusercontent.com/61306682/131655537-43e4ab0b-29f0-456d-bf2a-0fcf3de0ba2c.jpg" alt="wechat_moments_3" height=400 /> <img src="https://user-images.githubusercontent.com/61306682/131655555-608f9b7e-5cb7-4059-abbc-f70dfd00fe06.jpg" alt="wechat_moments_1" height=400 />
+
+- The project is an iPhone app which looks like Wechat Moments page. 
+- The page consists of profile image, avatar and tweets list
 - For each tweet, there will be a sender, optional content, optional images and comments
-- A tweet contains from 0 to 9 images, make sure the layout is aligning with Wechat Moments
-- Load all tweets in memory at the first time and only show first 5 of them at the beginning and after refresh.
-- Show 5 more while user pulling up the view at the bottom of the table view.
+- A tweet contains from 0 to 9 images
 - Pulling down table view to refresh, only first 5 items are shown after refreshing
+- All tweets are fetched and stored in memory at the first time and only show first 5 of them at the beginning and after refresh.
+- Show 5 more while user pulling up the view at the bottom of the table view.
 - Supports layout on all kinds of iOS device screen and orientation.
-- This is a static page, no more actions(tapping, pulling, multi-touching) are required. Any extra interaction is welcome and will be seriously considered in a positive way. For any other unclear layout concerns, please reference current Wechat implementation.
+- This is a static page.
 
 #### Tech requirements:
 
@@ -33,7 +34,6 @@ We have some requirements during building this app, and you should also try to f
 - AutoLayout & Size Classes is appreciated.
 - Unit tests are appreciated.
 - Functional programming is appreciated
-- Utilise Git for source control, for git log is the direct evidence of the development process
 - Utilise GCD for multi-thread operation
 - Only binary, framework or Cocopods dependency is allowed. do not copy other developer's source code(`*.h`, `*.m`, `*.swift`) into your project
 - Keep your code clean as much as possible Production and Technical requirements are weighing equally in the final result.
