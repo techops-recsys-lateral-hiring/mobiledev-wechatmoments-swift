@@ -4,7 +4,7 @@
 3. Execute `npm install -g mountebank`
 4. Execute `mb --configfile imposters.ejs`
 5. Open `WeChatMoments.xcworkspace` in the current directory
-6. Run the project and make sure the app can start correctly
+6. Run the project and make sure the app can start correctly(don't worry about if the features are working properly)
 
 ### App Introduction
 
@@ -14,7 +14,7 @@ We have some requirements during building this app, and you should also try to f
 
 #### Project overview
 
-The below screenshots are for reference/inspiration these do not represent the actual output from the given codebase.
+The below screenshots are from Wechat App, they are for reference/inspiration these do not represent the actual output from the given codebase.
 
 <img src="https://user-images.githubusercontent.com/61306682/131655545-cfa011b4-637f-45db-bb26-3bb9c986b94b.png" alt="wechat_moments_2" height=350 /> <img src="https://user-images.githubusercontent.com/61306682/131655537-43e4ab0b-29f0-456d-bf2a-0fcf3de0ba2c.jpg" alt="wechat_moments_3" height=350 /> <img src="https://user-images.githubusercontent.com/61306682/131655555-608f9b7e-5cb7-4059-abbc-f70dfd00fe06.jpg" alt="wechat_moments_1" height=350 />
 
