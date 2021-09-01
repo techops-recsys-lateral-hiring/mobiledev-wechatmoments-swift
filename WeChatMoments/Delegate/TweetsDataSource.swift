@@ -23,10 +23,7 @@ class TweetsDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let tweet: Tweet = tweets?[section],
-           let comments = tweet.comments {
-            return comments.count
-        }
+        // TODO: Add the comments count here
         return 0
     }
 
@@ -36,8 +33,8 @@ class TweetsDataSource: NSObject, UITableViewDataSource {
         if cell == nil {
             cell = CommentCell(style: .default, reuseIdentifier: self.cellIdentifier)
         }
-        let tweet = tweets?[indexPath.section]
-        let comments: [Comment]? = tweet?.comments
+        // TODO: Assign the real comments here
+        let comments: [Comment]? = []
         cell?.comment = comments?[indexPath.row]
         return cell!
     }
