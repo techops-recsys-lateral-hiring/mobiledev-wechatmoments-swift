@@ -10,16 +10,16 @@ import PromiseKit
 import SwiftyJSON
 
 protocol BaseService {
-    func get(url: String) -> Promise<Any?>
+    func get(url: String) -> Promise<Data>
 }
 
 class HttpService: BaseService {
-    internal func get(url: String) -> Promise<Any?> {
+    internal func get(url: String) -> Promise<Data> {
         return Promise { resolve in
-            AF.request(url).responseJSON(completionHandler: { response in
+            AF.request(url).responseData(completionHandler: { response in
                 switch response.result {
-                case .success(let value):
-                    resolve.resolve(value, nil)
+                case .success(let data):
+                    resolve.resolve(data, nil)
                 case .failure(let error):
                     resolve.reject(error)
                 }
