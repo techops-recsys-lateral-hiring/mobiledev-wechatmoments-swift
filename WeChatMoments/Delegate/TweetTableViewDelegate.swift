@@ -16,21 +16,22 @@ class TweetTableViewDelegate: NSObject, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let tweet = tweets?[indexPath.section],
-           let comments = tweet.comments {
-            let comment: Comment = comments[indexPath.row]
-            let sender = comment.sender
-            let username = sender?.username ?? ""
-            let content = comment.content ?? ""
-            let text =  username + content
-
-            let font = UIFont.boldSystemFont(ofSize: Constants.FONT_SIZE_COMMENT)
-            let widthOfContent = tableView.bounds.width - Constants.SENDER_AVATAR_SIZE.width - 40
-            let height = text.heightWithConstrainedWidth(width: widthOfContent, font: font)
-
-            return height + CGFloat(8)
-        }
+        // TODO: Calculate the height for each comment cell here, using the method below
+        // height(for comment: Comment, on tableView: UITableView) -> CGFloat
         return 0
+    }
+    
+    private func height(for comment: Comment, on tableView: UITableView) -> CGFloat {
+        let sender = comment.sender
+        let username = sender?.username ?? ""
+        let content = comment.content ?? ""
+        let text =  username + content
+
+        let font = UIFont.boldSystemFont(ofSize: Constants.FONT_SIZE_COMMENT)
+        let widthOfContent = tableView.bounds.width - Constants.SENDER_AVATAR_SIZE.width - 40
+        let height = text.heightWithConstrainedWidth(width: widthOfContent, font: font)
+
+        return height + CGFloat(8)
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -62,10 +63,10 @@ class TweetTableViewDelegate: NSObject, UITableViewDelegate {
             height += self.getHeightOf(content: content, in: tableView)
         }
 
-        if let images = tweet.images {
-            let imgUrls = images.map ({ $0["url"] ?? "" })
-            height += self.getHeightOf(imageUrls: imgUrls, in: tableView)
-        }
+        // TODO: set the real images array here and show the images on cell
+        let images = [Img]()
+        let imgUrls = images.map { $0.url }
+        height += self.getHeightOf(imageUrls: imgUrls, in: tableView)
 
         if height < Constants.SENDER_AVATAR_SIZE.height {
             height = Constants.SENDER_AVATAR_SIZE.height
