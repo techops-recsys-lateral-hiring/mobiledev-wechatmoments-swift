@@ -11,19 +11,11 @@ class TweetView: UITableViewHeaderFooterView {
 
     var tweet: Tweet! {
         didSet {
-            let sender = tweet.sender
-            let nick = sender?.nick
-            let username = sender?.username
-            let name = nick ?? username
-
-            self.btnSender.setTitle(name, for: .normal)
-
-            self.setSenderAvatar(sender?.avatar)
             self.setContent(tweet.content)
-
-            let images = tweet.images
-            let imgUrls = images?.map ({ $0["url"] ?? "" })
-            self.addImageViews(imgUrls)
+            // TODO: Assign the name, avatar and imageURLs
+//            self.btnSender.setTitle(nick ?? username, for: .normal)
+//            self.setSenderAvatar(avatar)
+//            self.addImageViews(imageURLs)
         }
     }
 
