@@ -27,11 +27,13 @@ class CommentCell: UITableViewCell {
 
         self.addSubview(self.btnCommentSender)
         let leftPadding = Constants.SENDER_AVATAR_SIZE.width + 20
-        self.btnCommentSender.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.left.equalToSuperview().offset(leftPadding)
-        }
+
+        self.btnCommentSender.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            btnCommentSender.topAnchor.constraint(equalTo: self.topAnchor),
+            btnCommentSender.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            btnCommentSender.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftPadding)
+        ])
 
         self.lblComment.backgroundColor = UIColor.commentsBackgroudColor()
         self.lblComment.textColor = UIColor.black
@@ -40,12 +42,14 @@ class CommentCell: UITableViewCell {
         self.lblComment.numberOfLines = 0
 
         self.addSubview(self.lblComment)
-        self.lblComment.snp.makeConstraints { make in
-            make.top.equalTo(btnCommentSender)
-            make.bottom.equalTo(btnCommentSender)
-            make.right.equalToSuperview().offset(-20)
-            make.left.equalTo(btnCommentSender.snp_right)
-        }
+
+        self.lblComment.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.lblComment.topAnchor.constraint(equalTo: btnCommentSender.topAnchor),
+            self.lblComment.bottomAnchor.constraint(equalTo: btnCommentSender.bottomAnchor),
+            self.lblComment.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
+            self.lblComment.leftAnchor.constraint(equalTo: btnCommentSender.rightAnchor)
+        ])
     }
 
     @available(*, unavailable)

@@ -1,4 +1,3 @@
-import SnapKit
 import UIKit
 
 class TweetView: UITableViewHeaderFooterView {
@@ -31,16 +30,18 @@ class TweetView: UITableViewHeaderFooterView {
 
     private func setupViews() {
         self.avatarView = UIImageView(frame: .zero)
-        self.avatarView!.image = UIImage(named: "emptyImage.png")
-        self.avatarView!.layer.cornerRadius = 5
+        self.avatarView.image = UIImage(named: "emptyImage.png")
+        self.avatarView.layer.cornerRadius = 5
         self.avatarView.clipsToBounds = true
-        self.contentView.addSubview(self.avatarView!)
-        self.avatarView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(Constants.TWEET_AVATAR_OFFSET)
-            make.top.equalToSuperview().offset(Constants.TWEET_AVATAR_OFFSET)
-            make.width.equalTo(Constants.SENDER_AVATAR_SIZE.width)
-            make.height.equalTo(Constants.SENDER_AVATAR_SIZE.height)
-        }
+        self.contentView.addSubview(self.avatarView)
+
+        self.avatarView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.avatarView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.TWEET_AVATAR_OFFSET),
+            self.avatarView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.TWEET_AVATAR_OFFSET),
+            self.avatarView.widthAnchor.constraint(equalToConstant: Constants.SENDER_AVATAR_SIZE.width),
+            self.avatarView.heightAnchor.constraint(equalToConstant: Constants.SENDER_AVATAR_SIZE.height)
+        ])
 
         self.btnSender = UIButton(type: .system)
         self.btnSender.isUserInteractionEnabled = false
@@ -49,25 +50,27 @@ class TweetView: UITableViewHeaderFooterView {
 
         self.contentView.addSubview(self.btnSender)
 
-        self.btnSender.snp.makeConstraints { make in
-            make.left.equalTo(self.avatarView.snp_right).offset(Constants.TWEET_SENDER_LEFT_OFFSET)
-            make.top.equalTo(self.avatarView.snp_top)
-            make.height.equalTo(Constants.FONT_SIZE_CONTENT)
-            make.width.lessThanOrEqualTo(100)
-        }
+        self.btnSender.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.btnSender.leftAnchor.constraint(equalTo: self.avatarView.rightAnchor, constant: Constants.TWEET_SENDER_LEFT_OFFSET),
+            self.btnSender.topAnchor.constraint(equalTo: self.avatarView.topAnchor),
+            self.btnSender.heightAnchor.constraint(equalToConstant: Constants.FONT_SIZE_CONTENT),
+            self.btnSender.widthAnchor.constraint(lessThanOrEqualToConstant: 100)
+        ])
 
         self.lblContent = UILabel()
         self.lblContent.textColor = UIColor.black
         self.lblContent.font = UIFont.systemFont(ofSize: Constants.FONT_SIZE_CONTENT)
         self.lblContent.numberOfLines = 0
 
-        self.contentView.addSubview(self.lblContent!)
+        self.contentView.addSubview(self.lblContent)
 
-        self.lblContent.snp.makeConstraints { make in
-            make.left.equalTo(self.btnSender)
-            make.right.equalToSuperview()
-            make.top.equalTo(self.btnSender.snp_bottom).offset(Constants.TWEET_CONTENT_TOP_OFFSET)
-        }
+        self.lblContent.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.lblContent.leftAnchor.constraint(equalTo: self.btnSender.leftAnchor),
+            self.lblContent.rightAnchor.constraint(equalTo: self.rightAnchor),
+            self.lblContent.topAnchor.constraint(equalTo: self.btnSender.bottomAnchor, constant: Constants.TWEET_CONTENT_TOP_OFFSET)
+        ])
     }
 
     private func setSenderAvatar(_ avatar: Any?) {
@@ -150,23 +153,23 @@ class TweetView: UITableViewHeaderFooterView {
                 continue
             }
 
-            view.snp.removeConstraints()
+            view.removeConstraints(view.constraints)
             imageView?.removeFromSuperview()
             imageView = nil
         }
     }
 
     private func addContraintsForImage(imageView: UIImageView, leadingConstant: CGFloat, topConstant: CGFloat, size: CGSize = Constants.IMAGE_SIZE) {
-        imageView.snp.makeConstraints { make in
-            make.left.equalTo(btnSender).offset(leadingConstant)
-            if let _ = tweet.content {
-                make.top.equalTo(lblContent.snp_bottom).offset(topConstant)
-            } else {
-                make.top.equalTo(btnSender.snp_bottom).offset(topConstant)
-            }
-
-            make.width.equalTo(size.width)
-            make.height.equalTo(size.height)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.leftAnchor.constraint(equalTo: btnSender.leftAnchor, constant: leadingConstant),
+            imageView.widthAnchor.constraint(equalToConstant: size.width),
+            imageView.heightAnchor.constraint(equalToConstant: size.height)
+        ])
+        if let _ = tweet.content {
+            imageView.topAnchor.constraint(equalTo: lblContent.bottomAnchor, constant: topConstant).isActive = true
+        } else {
+            imageView.topAnchor.constraint(equalTo: btnSender.bottomAnchor, constant: topConstant).isActive = true
         }
     }
 }

@@ -1,6 +1,5 @@
 import MBProgressHUD
 import PromiseKit
-import SnapKit
 import UIKit
 
 class MomentViewController: UITableViewController {
@@ -10,7 +9,7 @@ class MomentViewController: UITableViewController {
 
     fileprivate var profileImageView: UIImageView!
     fileprivate var avatarImageView: UIImageView!
-    fileprivate var nickNameLable: UILabel!
+    fileprivate var nickNameLabel: UILabel!
 
     fileprivate var dataSource: TweetsDataSource!
     fileprivate var delegate: TweetTableViewDelegate!
@@ -127,27 +126,29 @@ private extension MomentViewController {
         self.profileImageView.clipsToBounds = true
         superView.addSubview(self.profileImageView)
 
-        self.profileImageView.snp.makeConstraints { make in
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-50)
-            make.top.equalToSuperview()
-        }
+        self.profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.profileImageView.leftAnchor.constraint(equalTo: superView.leftAnchor),
+            self.profileImageView.rightAnchor.constraint(equalTo: superView.rightAnchor),
+            self.profileImageView.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -50),
+            self.profileImageView.topAnchor.constraint(equalTo: superView.topAnchor)
+        ])
     }
 
     func addNickNameLabel(_ superView: UIView) {
-        self.nickNameLable = UILabel(frame: .zero)
-        self.nickNameLable.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        self.nickNameLable.textColor = .white
-        self.nickNameLable.lineBreakMode = .byTruncatingMiddle
-        self.nickNameLable.numberOfLines = 1
-        superView.addSubview(self.nickNameLable)
+        self.nickNameLabel = UILabel(frame: .zero)
+        self.nickNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        self.nickNameLabel.textColor = .white
+        self.nickNameLabel.lineBreakMode = .byTruncatingMiddle
+        self.nickNameLabel.numberOfLines = 1
+        superView.addSubview(self.nickNameLabel)
 
-        self.nickNameLable.snp.makeConstraints { make in
-            make.right.equalTo(self.avatarImageView.snp_left).offset(-20)
-            make.top.equalTo(self.avatarImageView).offset(15)
-            make.width.lessThanOrEqualTo(200)
-        }
+        self.nickNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.nickNameLabel.rightAnchor.constraint(equalTo: self.avatarImageView.leftAnchor, constant: -20),
+            self.nickNameLabel.topAnchor.constraint(equalTo: self.avatarImageView.topAnchor, constant: 15),
+            self.nickNameLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 200)
+        ])
     }
 
     func addAvatarImageView(_ superView: UIView) {
@@ -157,18 +158,18 @@ private extension MomentViewController {
         self.avatarImageView.layer.cornerRadius = 5
         self.avatarImageView.backgroundColor = .white
         self.avatarImageView.contentMode = .scaleAspectFill
-
         superView.addSubview(self.avatarImageView)
-        self.avatarImageView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-20)
-            if #available(iOS 11.0, *) {
-                make.right.equalTo(superView.safeAreaLayoutGuide.snp.right).offset(-15)
-            } else {
-                make.right.equalToSuperview().offset(-15)
-            }
 
-            make.width.equalTo(75)
-            make.height.equalTo(75)
+        self.avatarImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.avatarImageView.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -20),
+            self.avatarImageView.widthAnchor.constraint(equalToConstant: 75),
+            self.avatarImageView.heightAnchor.constraint(equalToConstant: 75)
+        ])
+        if #available(iOS 11.0, *) {
+            self.avatarImageView.rightAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.rightAnchor, constant: -15).isActive = true
+        } else {
+            self.avatarImageView.rightAnchor.constraint(equalTo: superView.rightAnchor, constant: -15).isActive = true
         }
     }
 
@@ -195,7 +196,7 @@ private extension MomentViewController {
         }
 
         if let nickName = user.nick {
-            self.nickNameLable.text = nickName
+            self.nickNameLabel.text = nickName
         }
     }
 
