@@ -10,7 +10,6 @@ target 'WeChatMoments' do
   pod 'MBProgressHUD', '~> 0.9.1'
   pod 'SwiftyJSON', '~> 4.0'
   pod "PromiseKit", "~> 6.8"
-  pod 'SnapKit'
 
   target 'WeChatMomentsTests' do
     inherit! :search_paths

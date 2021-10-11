@@ -23,7 +23,6 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.13.1):
     - PromiseKit/CorePromise
-  - SnapKit (4.2.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -31,7 +30,6 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.9.1)
   - OHHTTPStubs/Swift
   - PromiseKit (~> 6.8)
-  - SnapKit
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -40,7 +38,6 @@ SPEC REPOS:
     - MBProgressHUD
     - OHHTTPStubs
     - PromiseKit
-    - SnapKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -48,9 +45,8 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: d75c93af5e1d0784074b313678625a1622785a6b
+PODFILE CHECKSUM: 3a7acfa1d384b7685277ac0c46b099886e923cd5
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.0
