@@ -1,6 +1,7 @@
 ### Requirements
-1. Cocoapods  - `sudo gem install cocoapods`
-2. npm - via [Node.js installer](https://nodejs.org/en/download/) or [nvm](https://github.com/nvm-sh/nvm#install--update-script)
+1. Node.js version 12.0+ [Download](https://nodejs.org/en/download/)
+2. Cocoapods  - `sudo gem install cocoapods`
+3. npm - via [Node.js installer](https://nodejs.org/en/download/) or [nvm](https://github.com/nvm-sh/nvm#install--update-script)
 
 ### Setup the project
 1. Locate the current directory in terminal
