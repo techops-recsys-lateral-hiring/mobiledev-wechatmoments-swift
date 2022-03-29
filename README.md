@@ -5,7 +5,7 @@
 
 ### Setup the project
 1. Locate the current directory in terminal
-2. Execute `pod install`
+2. Execute `pod install` (or `sudo arch -x86_64 gem install ffi && arch -x86_64 pod install` for Apple M1)
 3. Execute `npm install -g mountebank`
 4. Execute `mb --configfile imposters.ejs`
 5. Open `WeChatMoments.xcworkspace` in the current directory
