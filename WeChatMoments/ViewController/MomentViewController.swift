@@ -73,7 +73,7 @@ class MomentViewController: UITableViewController {
         }
 
         group.notify(queue: DispatchQueue.main) {
-            indicator?.hide(true)
+            indicator?.hide(animated: true)
         }
     }
 
@@ -167,7 +167,7 @@ private extension MomentViewController {
             self.avatarImageView.heightAnchor.constraint(equalToConstant: 75)
         ])
         if #available(iOS 11.0, *) {
-            self.avatarImageView.rightAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.rightAnchor, constant: -15).isActive = true
+            self.avatarImageView.rightAnchor.constraint(equalTo: superView.safeAreaLayou tGuide.rightAnchor, constant: -15).isActive = true
         } else {
             self.avatarImageView.rightAnchor.constraint(equalTo: superView.rightAnchor, constant: -15).isActive = true
         }
@@ -175,8 +175,8 @@ private extension MomentViewController {
 
     func showIndicator() -> MBProgressHUD? {
         let indicator = MBProgressHUD.showAdded(to: self.view, animated: true)
-        indicator?.labelText = "loading..."
-        indicator?.mode = MBProgressHUDMode.customView
+        indicator.label.text = "loading..."
+        indicator.mode = MBProgressHUDMode.customView
 
         return indicator
     }
