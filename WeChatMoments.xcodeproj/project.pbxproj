@@ -3,12 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		110586A226D6B8ED008BB4B3 /* Tweets.json in Resources */ = {isa = PBXBuildFile; fileRef = 110586A126D6B8ED008BB4B3 /* Tweets.json */; };
 		110586AB26D6BAFE008BB4B3 /* MyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110586AA26D6BAFE008BB4B3 /* MyModels.swift */; };
+		5843CF1E2B2BFF4400361F66 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5843CF1D2B2BFF4400361F66 /* Alamofire */; };
+		5843CF212B2BFF6D00361F66 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 5843CF202B2BFF6D00361F66 /* MBProgressHUD */; };
+		5843CF242B2BFF8F00361F66 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5843CF232B2BFF8F00361F66 /* SwiftyJSON */; };
+		5843CF272B2C005A00361F66 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5843CF262B2C005A00361F66 /* PromiseKit */; };
 		6B7060AE25E10B0800ABD1C7 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7060AD25E10B0800ABD1C7 /* HttpService.swift */; };
 		6B70610625E1109F00ABD1C7 /* UrlConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70610525E1109F00ABD1C7 /* UrlConstant.swift */; };
 		6B70612225E1168F00ABD1C7 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B70612125E1168F00ABD1C7 /* UserService.swift */; };
@@ -94,6 +98,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5843CF242B2BFF8F00361F66 /* SwiftyJSON in Frameworks */,
+				5843CF272B2C005A00361F66 /* PromiseKit in Frameworks */,
+				5843CF212B2BFF6D00361F66 /* MBProgressHUD in Frameworks */,
+				5843CF1E2B2BFF4400361F66 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +305,12 @@
 			dependencies = (
 			);
 			name = WeChatMoments;
+			packageProductDependencies = (
+				5843CF1D2B2BFF4400361F66 /* Alamofire */,
+				5843CF202B2BFF6D00361F66 /* MBProgressHUD */,
+				5843CF232B2BFF8F00361F66 /* SwiftyJSON */,
+				5843CF262B2C005A00361F66 /* PromiseKit */,
+			);
 			productName = WeChatMoments;
 			productReference = 6BB4205C25E08F2900FDEFAB /* WeChatMoments.app */;
 			productType = "com.apple.product-type.application";
@@ -368,6 +382,12 @@
 				Base,
 			);
 			mainGroup = 6BB4205325E08F2900FDEFAB;
+			packageReferences = (
+				5843CF1C2B2BFF4400361F66 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5843CF1F2B2BFF6D00361F66 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				5843CF222B2BFF8F00361F66 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				5843CF252B2C005A00361F66 /* XCRemoteSwiftPackageReference "PromiseKit" */,
+			);
 			productRefGroup = 6BB4205D25E08F2900FDEFAB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -603,6 +623,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JS5UW5ZZU7;
 				INFOPLIST_FILE = WeChatMoments/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,6 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JS5UW5ZZU7;
 				INFOPLIST_FILE = WeChatMoments/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,6 +705,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JS5UW5ZZU7;
 				INFOPLIST_FILE = WeChatMomentsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -702,6 +725,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JS5UW5ZZU7;
 				INFOPLIST_FILE = WeChatMomentsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -755,6 +779,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5843CF1C2B2BFF4400361F66 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
+		5843CF1F2B2BFF6D00361F66 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		5843CF222B2BFF8F00361F66 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		5843CF252B2C005A00361F66 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5843CF1D2B2BFF4400361F66 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5843CF1C2B2BFF4400361F66 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		5843CF202B2BFF6D00361F66 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5843CF1F2B2BFF6D00361F66 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+		5843CF232B2BFF8F00361F66 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5843CF222B2BFF8F00361F66 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		5843CF262B2C005A00361F66 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5843CF252B2C005A00361F66 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6BB4205425E08F2900FDEFAB /* Project object */;
 }
