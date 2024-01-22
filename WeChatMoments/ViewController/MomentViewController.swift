@@ -73,7 +73,7 @@ class MomentViewController: UITableViewController {
         }
 
         group.notify(queue: DispatchQueue.main) {
-            indicator?.hide(true)
+            indicator?.hide(animated: true)
         }
     }
 
@@ -175,8 +175,8 @@ private extension MomentViewController {
 
     func showIndicator() -> MBProgressHUD? {
         let indicator = MBProgressHUD.showAdded(to: self.view, animated: true)
-        indicator?.labelText = "loading..."
-        indicator?.mode = MBProgressHUDMode.customView
+        indicator.label.text = "loading..."
+        indicator.mode = MBProgressHUDMode.customView
 
         return indicator
     }

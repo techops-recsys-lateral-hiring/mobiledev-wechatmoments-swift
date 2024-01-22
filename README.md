@@ -1,15 +1,13 @@
 ### Requirements
 1. Node.js version 12.0+ [Download](https://nodejs.org/en/download/)
-2. Cocoapods  - `sudo gem install cocoapods`
-3. npm - via [Node.js installer](https://nodejs.org/en/download/) or [nvm](https://github.com/nvm-sh/nvm#install--update-script)
+2. npm - via [Node.js installer](https://nodejs.org/en/download/) or [nvm](https://github.com/nvm-sh/nvm#install--update-script)
 
 ### Setup the project
 1. Locate the current directory in terminal
-2. Execute `pod install` (or `sudo arch -x86_64 gem install ffi && arch -x86_64 pod install` for Apple M1)
-3. Execute `npm install -g mountebank`
-4. Execute `mb --configfile imposters.ejs`
-5. Open `WeChatMoments.xcworkspace` in the current directory
-6. Run the project and make sure the app can start correctly(don't worry about if the features are working properly)
+2. Execute `npm install -g mountebank`
+3. Execute `mb --configfile imposters.ejs`
+4. Open `WeChatMoments.xcodeproj` in the current directory and ensure that SPM (Swift Package Manager) frameworks are ready
+5. Run the project and make sure the app can start correctly(don't worry about if the features are working properly)
 
 ### App Introduction
 
@@ -42,5 +40,5 @@ The below screenshots are from Wechat App, they are for reference/inspiration th
 - Unit tests are appreciated.
 - Functional programming is appreciated
 - Utilise GCD for multi-thread operation
-- Only binary, framework or Cocopods dependency is allowed. do not copy other developer's source code(`*.h`, `*.m`, `*.swift`) into your project
+- Only binary, framework, Cocopods or SPM dependencies are allowed. do not copy other developer's source code(`*.h`, `*.m`, `*.swift`) into your project
 - Keep your code clean as much as possible Production and Technical requirements are weighing equally in the final result.
